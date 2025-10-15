@@ -5,7 +5,16 @@ import Hero from '@/components/Landing/Hero'
 import HowItWorks from '@/components/Landing/HowItWorks'
 import PricingSection from '@/components/Landing/PricingSection'
 import WhatToAsk from '@/components/Landing/WhatToAsk'
-const Home = () => {
+import { syncUser } from '@/lib/ServerActions/User'
+import { currentUser } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
+const  Home = async () => {
+  const user = await currentUser()
+
+  await syncUser()
+
+  if (user) redirect("/dashboard")
+
   return (
    <main className=' min-h-screen bg-background  flex
    flex-col gap-5 '>
