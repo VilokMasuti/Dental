@@ -1,3 +1,4 @@
+import UserSync from '@/components/UserSync';
 import {
   ClerkProvider,
 } from '@clerk/nextjs';
@@ -29,6 +30,7 @@ export default function RootLayout({
         <ClerkProvider>
 <html lang="en">
      <body className={`${geistSans.variable} ${geistMono.variable} antialiased  dark`}>
+      <UserSync/>
         {children}
       </body>
     </html>
