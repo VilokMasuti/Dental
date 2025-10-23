@@ -1,3 +1,4 @@
+import TanStackProvider from '@/components/providers/TanStackProvider';
 import UserSync from '@/components/UserSync';
 import {
   ClerkProvider,
@@ -27,7 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-        <ClerkProvider>
+        <TanStackProvider>
+                  <ClerkProvider>
 <html lang="en">
      <body className={`${geistSans.variable} ${geistMono.variable} antialiased  dark`}>
       <UserSync/>
@@ -36,6 +38,9 @@ export default function RootLayout({
     </html>
 
         </ClerkProvider>
+
+        </TanStackProvider>
+
 
   );
 }
