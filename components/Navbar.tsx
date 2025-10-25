@@ -43,7 +43,7 @@ function Navbar() {
             </Link>
 
             <Link
-              href="/voice"
+              href="/vioce"
               className={`flex items-center gap-2 transition-colors hover:text-foreground ${
                 pathname === "/voice" ? "text-foreground" : "text-muted-foreground"
               }`}

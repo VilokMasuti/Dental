@@ -215,8 +215,13 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
+ @layer utilities {
+  .textbg {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-zinc-950   ;
+  }
 
+}
+}
 /* Add cursor pointer to buttons by default - this is coming from tailwind docs */
 @layer base {
   button:not(:disabled),
