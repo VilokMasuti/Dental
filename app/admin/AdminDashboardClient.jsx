@@ -1,9 +1,9 @@
 "use client"
 
+import { useGetAppointments } from "@/app/hooks/use-appointments";
 import AdminStats from "@/components/admin/AdminStats";
 import DoctorsManagement from "@/components/admin/DoctorsManagement";
 import Navbar from "@/components/Navbar";
-import { useGetAppointments } from "@/app/hooks/use-appointments";
 import { useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import { useGetDoctors } from "../hooks/use-doctor";
@@ -56,7 +56,7 @@ const AdminDashboardClient = () => {
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
               <div className="w-2 h-2   bg-green-500  rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-primary">Admin Dashboard</span>
+              <span className="text-sm font-medium textbg ">Admin Dashboard</span>
             </div>
             <div>
               <h1 className="text-4xl font-bold mb-2">
