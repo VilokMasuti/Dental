@@ -1,11 +1,11 @@
 
+import { useAvailableDoctors } from '@/app/hooks/use-doctor';
 import { MapPinIcon, PhoneIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { DoctorCardsLoading } from "./DoctorCardsLoading";
-import { useAvailableDoctors } from '@/app/hooks/use-doctor';
 
 interface DoctorSelectionStepProps {
   selectedDentistId: string | null;
@@ -23,14 +23,14 @@ function DoctorSelectionStep({
   if (isLoading)
     return (
       <div className="space-y-6">
-        <h2 className="text-2xl font-semibold">Choose Your Dentist</h2>
+
         <DoctorCardsLoading />
       </div>
     );
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold">Choose Your Dentist</h2>
+      <h2 className="text-2xl font-semibold textbg ">Choose Your Dentist</h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {dentists.map((dentist) => (

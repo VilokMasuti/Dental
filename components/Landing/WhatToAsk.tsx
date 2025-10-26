@@ -9,7 +9,7 @@ function WhatToAsk() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/5 to-primary/10 rounded-full border border-primary/10 backdrop-blur-sm mb-6">
             <MessageCircleIcon className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">AI-Powered Conversations</span>
+            <span className="text-sm font-medium textbg">AI-Powered Conversations</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
             <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">

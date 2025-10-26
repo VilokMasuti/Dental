@@ -9,12 +9,12 @@ function HowItWorks() {
       {/* HEADER */}
       <div className="text-center mb-20">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/5 to-primary/10 rounded-full border border-primary/10 backdrop-blur-sm mb-6">
-          <ZapIcon className="size-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Simple Process</span>
+          <ZapIcon className="size-4 textbg" />
+          <span className="text-sm font-medium .textbg">Simple Process</span>
         </div>
 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-          <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <span className="textbg">
             Three steps to
           </span>
           <br />
@@ -48,15 +48,15 @@ function HowItWorks() {
                 <Image src="/audio.png" alt="Voice Chat" width={40} height={40} className="w-14" />
               </div>
 
-              <h3 className="text-2xl font-bold mb-4 text-center">Ask Questions</h3>
-              <p className="text-muted-foreground text-center leading-relaxed mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-center textbg">Ask Questions</h3>
+              <p className="text-muted-foreground text-center leading-relaxed mb-6 textbg">
                 Chat with our AI assistant about any dental concerns. Get instant answers about
                 symptoms, treatments, and oral health tips.
               </p>
 
               {/* Feature Pills */}
               <div className="flex flex-wrap gap-2 justify-center">
-                <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                <span className="px-3 py-1 bg-primary/10 textbgtext-xs rounded-full">
                   24/7 Available
                 </span>
                 <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">
@@ -79,8 +79,8 @@ function HowItWorks() {
                 <Image src="/brain.png" alt="AI Brain" width={40} height={40} className="w-14" />
               </div>
 
-              <h3 className="text-2xl font-bold mb-4 text-center">Get Expert Advice</h3>
-              <p className="text-muted-foreground text-center leading-relaxed mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-center textbg">Get Expert Advice</h3>
+              <p className="text-muted-foreground text-center leading-relaxed mb-6 textbg">
                 Receive personalized recommendations based on thousands of dental cases. Our AI
                 provides professional-grade insights.
               </p>
@@ -110,8 +110,8 @@ function HowItWorks() {
                 <Image src="/calendar.png" alt="Calendar" width={40} height={40} className="w-14" />
               </div>
 
-              <h3 className="text-2xl font-bold mb-4 text-center">Book & Get Care</h3>
-              <p className="text-muted-foreground text-center leading-relaxed mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-center textbg">Book & Get Care</h3>
+              <p className="text-muted-foreground text-center leading-relaxed mb-6 textbg">
                 Schedule with verified dentists and receive comprehensive follow-up care. Track your
                 progress seamlessly.
               </p>
