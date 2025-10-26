@@ -212,12 +212,24 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+  @font-face {
+  font-family: 'Domaine';
+  src: url('/fonts/Domaine-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Domaine', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      @apply bg-background text-foreground;
+}
+
  @layer utilities {
   .textbg {
-    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-zinc-950   ;
+   @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-100;
+;
+
   }
 
 }

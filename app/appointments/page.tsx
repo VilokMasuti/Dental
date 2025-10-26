@@ -1,6 +1,7 @@
 
 "use client"
 import { useBookAppointment, useUserAppointments } from '@/app/hooks/use-appointments';
+import { AppointmentConfirmationModal } from '@/components/appoinments/AppointmentConfirmationModal';
 import BookingConfirmationStep from '@/components/appoinments/BookingConfirmationStep';
 import DoctorSelectionStep from '@/components/appoinments/DoctorSelectionStep';
 import ProgressSteps from '@/components/appoinments/ProgressSteps';
@@ -53,7 +54,27 @@ bookAppointmentMutation.mutate({
         onSuccess: async (appointment) => {
           // store the appointment details to show in the modal
           setBookedAppointment(appointment);
+  try {
+            const emailResponse = await fetch("/api/send-appointment-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                userEmail: appointment.patientEmail,
+                doctorName: appointment.doctorName,
+                appointmentDate: format(new Date(appointment.date), "EEEE, MMMM d, yyyy"),
+                appointmentTime: appointment.time,
+                appointmentType: appointmentType?.name,
+                duration: appointmentType?.duration,
+                price: appointmentType?.price,
+              }),
+            });
 
+            if (!emailResponse.ok) console.error("Failed to send confirmation email");
+          } catch (error) {
+            console.error("Error sending confirmation email:", error);
+          }
 
 
           // show the success modal
@@ -116,6 +137,22 @@ bookAppointmentMutation.mutate({
             onConfirm={handleBookAppointment}
           />
         )}
+
+
+              {bookedAppointment && (
+        <AppointmentConfirmationModal
+          open={showConfirmationModal}
+          onOpenChange={setShowConfirmationModal}
+          appointmentDetails={{
+            doctorName: bookedAppointment.doctorName,
+            appointmentDate: format(new Date(bookedAppointment.date), "EEEE, MMMM d, yyyy"),
+            appointmentTime: bookedAppointment.time,
+            userEmail: bookedAppointment.patientEmail,
+          }}
+        />
+      )}
+
+
 
       </div>
       {/* SHOW EXISTING APPOINTMENTS FOR THE CURRENT USER */}
