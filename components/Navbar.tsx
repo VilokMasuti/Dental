@@ -1,7 +1,7 @@
 "use client";
 
 import { UserButton, useUser } from "@clerk/nextjs";
-import { CalendarIcon, CrownIcon, HomeIcon, MicIcon } from "lucide-react";
+import { CalendarIcon, CrownIcon, HomeIcon, MicIcon, UserStar } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 function Navbar() {
   const { user } = useUser();
   const pathname = usePathname();
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-2 border-b border-border/50 bg-background/80 backdrop-blur-md h-16  font-[Harmattan] ">
@@ -25,7 +26,7 @@ function Navbar() {
               className={`flex items-center gap-2 transition-colors ${
                 pathname === "/dashboard"
                   ? "text-foreground hover:text-primary font-medium"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-orange-400"
               }`}
             >
               <HomeIcon className="w-4 h-4" />
@@ -34,7 +35,7 @@ function Navbar() {
 
             <Link
               href="/appointments"
-              className={`flex items-center gap-2 transition-colors hover:text-foreground ${
+              className={`flex items-center gap-2 transition-colors hover:text-orange-400 ${
                 pathname === "/appointments" ? "text-foreground" : "text-muted-foreground"
               }`}
             >
@@ -44,8 +45,8 @@ function Navbar() {
 
             <Link
               href="/vioce"
-              className={`flex items-center gap-2 transition-colors hover:text-foreground ${
-                pathname === "/voice" ? "text-foreground" : "text-muted-foreground"
+              className={`flex items-center gap-2 transition-colors hover:text-orange-400 ${
+                pathname === "/voice" ? "text-foreground" : "hover:text-orange-400"
               }`}
             >
               <MicIcon className="w-4 h-4" />
@@ -60,6 +61,21 @@ function Navbar() {
               <CrownIcon className="w-4 h-4" />
               <span className="hidden md:inline">Pro</span>
             </Link>
+
+        {user?.emailAddresses?.[0]?.emailAddress === process.env.NEXT_PUBLIC_ADMIN_EMAIL && (
+  <Link
+    href="/admin"
+    className={`flex items-center gap-2 transition-colors hover:text-orange-400 ${
+      pathname === "/admin" ? "text-foreground" : "hover:text-orange-400"
+    }`}
+  >
+    <UserStar className="w-4 h-4" />
+    <span className="hidden md:inline">Admin</span>
+  </Link>
+)}
+
+
+
           </div>
         </div>
 

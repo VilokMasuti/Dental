@@ -1,4 +1,4 @@
-import { MicIcon } from "lucide-react";
+import Image from "next/image";
 
 function WelcomeSection() {
   return (
@@ -9,7 +9,7 @@ function WelcomeSection() {
           <span className="text-sm font-medium text-primary">Voice Assistant Ready</span>
         </div>
         <div>
-          <h1 className="text-4xl font-bold mb-2">AI Voice Assistant</h1>
+          <h1 className="text-4xl font-bold mb-2 textbg ">AI Voice Assistant</h1>
           <p className="text-muted-foreground">
             Talk to your AI dental assistant using natural voice commands. Get instant advice and
             professional guidance.
@@ -18,8 +18,15 @@ function WelcomeSection() {
       </div>
 
       <div className="hidden lg:block">
-        <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center">
-          <MicIcon className="w-16 h-16 text-primary" />
+        <div className=" flex items-center justify-center">
+  <Image
+               src={"/micc.png"}
+               alt="DentWise Logo"
+               width={52}
+               height={62}
+
+
+               className=" w-[10rem] h-[10rem]  object-cover" />
         </div>
       </div>
     </div>

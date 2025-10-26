@@ -3,6 +3,7 @@
 import { useGetAppointments } from "@/app/hooks/use-appointments";
 import AdminStats from "@/components/admin/AdminStats";
 import DoctorsManagement from "@/components/admin/DoctorsManagement";
+import RecentAppointments from "@/components/admin/RecentAppointments";
 import Navbar from "@/components/Navbar";
 import { useUser } from "@clerk/nextjs";
 import Image from "next/image";
@@ -92,6 +93,7 @@ const AdminDashboardClient = () => {
         />
 
         <DoctorsManagement />
+        <RecentAppointments />
 
       </div>
 

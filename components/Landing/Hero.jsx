@@ -23,7 +23,7 @@ const Hero = () => {
               <div className="space-y-6">
                 {/* BADGE */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full border border-primary/20 backdrop-blur-sm">
-                  <div className="w-2 h-2  bg-green-500 rounded-full animate-pulse  duration-700"></div>
+                  <div className="w-2 h-2   bg-orange-400 rounded-full animate-pulse  duration-700"></div>
                   <span className="text-sm font-medium text-primary">
                     AI-Powered Dental Assistant
                   </span>
@@ -31,7 +31,7 @@ const Hero = () => {
 
                 {/* MAIN HEADING */}
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                  <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
+                  <span className="  textbg">
                     Your Dental
                   </span>
                   <br />
@@ -39,7 +39,7 @@ const Hero = () => {
                     Questions
                   </span>
                   <br />
-                  <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/30 bg-clip-text text-transparent">
+                  <span className=" textbg">
                     Answered Instantly
                   </span>
                 </h1>

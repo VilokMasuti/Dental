@@ -12,13 +12,13 @@ const Header = () => {
         </Link>
 
          <div className="hidden md:flex items-center gap-8 font-[Harmattan]">
-          <a href="#" className="text-muted-foreground hover:text-foreground  hover: duration-1000">
+          <a href="#" className="text-muted-foreground hover:text-orange-400 hover: duration-1000">
             How it Works
           </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground hover: duration-1000">
+          <a href="#" className="text-muted-foreground hover:text-orange-400 hover: duration-1000">
             Pricing
           </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground hover: duration-1000">
+          <a href="#" className="text-muted-foreground hover:text-orange-400 hover: duration-1000">
             About
           </a>
         </div>
